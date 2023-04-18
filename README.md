@@ -1,7 +1,7 @@
 # Projet Quori
 
 ## Description
-Suori est un clone du site officiel Quora
+Quori est un clone du site officiel Quora
 
 ## Persistance des données
 - MySQL
