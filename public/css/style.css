@@ -201,6 +201,23 @@ ul {
     color: var(--warning);
 }
 
+/* MESSAGE FLASH */
+
+.flash {
+    padding: 20px;
+    text-align: center;
+    color: white;
+
+}
+
+.flash-success {
+    background-color: var(--success);
+}
+
+.flash-error {
+    background-color: var(--warning);
+}
+
 /* GENERAL */
 
 .content {
