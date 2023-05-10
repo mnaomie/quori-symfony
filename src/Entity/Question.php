@@ -20,7 +20,7 @@ class Question
 
     #[ORM\Column(length: 255)]
     #[Assert\NotBlank(message: "Veuillez définir un titre")]
-    #[Assert\Length(min: 20, minMessage: "Veuillez détailler votre titre", max: 255, maxMessage: "Le titre est trop long")]
+    #[Assert\Length(min: 5, minMessage: "Veuillez détailler votre titre", max: 255, maxMessage: "Le titre est trop long")]
     private ?string $title = null;
 
     #[ORM\Column(type: Types::TEXT)]
