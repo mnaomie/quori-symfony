@@ -15,6 +15,19 @@ use Symfony\Component\Security\Http\Attribute\IsGranted;
 
 class UserController extends AbstractController
 {
+
+    #[Route('/user/questions', name: 'show_questions')]
+    #[IsGranted(('IS_AUTHENTICATED_FULLY'))]
+    public function showQuestions()
+    {
+        return $this->render('user/show_questions.html.twig');
+    }
+    #[Route('/user/comments', name: 'show_comments')]
+    #[IsGranted(('IS_AUTHENTICATED_FULLY'))]
+    public function showComments()
+    {
+        return $this->render('user/show_comments.html.twig');
+    }
     #[Route('/user/{id}', name: 'profile_user')]
     #[IsGranted("IS_AUTHENTICATED_FULLY")]
     public function userProfile(User $user): Response
@@ -52,4 +65,6 @@ class UserController extends AbstractController
             'form' => $profileForm->createView()
         ]);
     }
+    
+
 }

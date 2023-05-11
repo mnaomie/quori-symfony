@@ -1,0 +1,21 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+    Mes questions
+{% endblock title %}
+
+
+{% block body %}
+
+    <div class="block mb-20">
+        <h3 class="pb-30">Mes questions</h3>
+        <ul>
+            {% for questions in app.user.questions %}
+                <a href="{{ path('show_questions', {id: questions.id}) }}">
+                    <li class="pb-30">{{ questions.title }}</li>
+                </a>
+            {% endfor %} 
+        </ul>
+    </div>
+
+{% endblock body %}
