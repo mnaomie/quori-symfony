@@ -36,7 +36,7 @@ class UserController extends AbstractController
         if($currentUser === $user) {
             return $this->redirectToRoute('current_user_profile');
         }
-        return $this->render('user/show.html.twig');
+        return $this->render('user/show.html.twig', ['user' => $user]);
     }
     #[Route('/user', name: 'current_user_profile')]
     #[IsGranted("IS_AUTHENTICATED_FULLY")]
@@ -61,7 +61,7 @@ class UserController extends AbstractController
             $em->flush();
             $this->addFlash('success', 'Modification des informations sauvegardé');
         }
-        return $this->render('user/show.html.twig', [
+        return $this->render('user/profile.html.twig', [
             'form' => $profileForm->createView()
         ]);
     }
